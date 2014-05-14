@@ -72,3 +72,26 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+###########################################################
+
+# Command History Search "ls " -> C-p
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+
+# ディレクトリ名だけで移動する
+setopt auto_cd
+
+# ls
+alias la='ls -a'
+alias ll='ls -l --time-style="+%Y-%m-%d %H:%M:%S"'
+alias lla='ls -al --time-style="+%Y-%m-%d %H:%M:%S"'
+
+# pushd
+setopt auto_pushd
+setopt pushd_ignore_dups
+alias dirs='dirs -v'
+
