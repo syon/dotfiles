@@ -101,3 +101,7 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 alias dirs='dirs -v'
 
+# alias
+alias gh='cd ~/GitHub/syon'
+alias vzrc='vim ~/.zshrc'
+alias szrc='source ~/.zshrc'
