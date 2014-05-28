@@ -92,9 +92,9 @@ bindkey "^N" history-beginning-search-forward-end
 setopt auto_cd
 
 # ls
-alias la='ls -a'
+alias la='ls -A'
 alias ll='ls -l --time-style="+%Y-%m-%d %H:%M:%S"'
-alias lla='ls -al --time-style="+%Y-%m-%d %H:%M:%S"'
+alias lla='ls -Al --time-style="+%Y-%m-%d %H:%M:%S"'
 
 # pushd
 setopt auto_pushd
