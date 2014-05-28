@@ -75,6 +75,12 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ###########################################################
 
+# zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# 補完機能を有効にする
+compinit -u
+
 # Command History Search "ls " -> C-p
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
