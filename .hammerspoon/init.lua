@@ -1,4 +1,4 @@
-require "tools/clipboard"
+-- require "tools/clipboard"
 
 local function keyCode(key, modifiers)
    modifiers = modifiers or {}
@@ -48,3 +48,7 @@ remapKey({'ctrl'}, 'h', keyCode('delete'))
 remapKey({'ctrl'}, 'm', keyCode('return'))
 remapKey({'ctrl'}, 'v', keyCode('pagedown'))
 remapKey({'ctrl', 'shift'}, 'v', keyCode('pageup'))
+remapKey({'ctrl'}, '9', keyCode('left', {'alt', 'cmd'}))
+remapKey({'ctrl'}, '0', keyCode('right', {'alt', 'cmd'}))
+remapKey({'ctrl'}, ',', keyCode('up', {'cmd'}))
+remapKey({'ctrl'}, '.', keyCode('down', {'cmd'}))
