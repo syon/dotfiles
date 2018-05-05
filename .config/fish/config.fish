@@ -1,12 +1,29 @@
-set fisher_home ~/.local/share/fisherman
-set fisher_config ~/.config/fisherman
-source $fisher_home/config.fish
+# yarn
+#set -x PATH (yarn global bin) $PATH
 
-# for fish v2.2.0, until v2.3.0
-# https://github.com/fisherman/fisherman#what-is-the-required-fish-version
-for file in ~/.config/fish/conf.d/*.fish
-    source $file
+# anyenv
+set -x PATH $HOME/.anyenv/bin $PATH
+
+# anyenv - ndenv
+set -x NDENV_ROOT $HOME/.anyenv/envs/ndenv
+set -x PATH $HOME/.anyenv/envs/ndenv/bin $PATH
+set -x PATH $NDENV_ROOT/shims $PATH
+
+# peco
+set fish_plugins theme peco
+
+# Bind for peco history to Ctrl+r
+function fish_user_key_bindings
+    bind \cr peco_select_history
 end
 
-set PATH $PATH $HOME/.nodebrew/current/bin
-
+# Enter ls
+function done_enter --on-event fish_postexec
+    if test -z "$argv"
+        ls
+        if git rev-parse --is-inside-work-tree ^/dev/null
+            echo (set_color yellow)"--- git status ---"(set_color normal)
+            git status -sb
+        end
+    end
+end
