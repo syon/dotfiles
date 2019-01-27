@@ -1,10 +1,10 @@
-# yarn
-#set -x PATH (yarn global bin) $PATH
+# direnv
+eval (direnv hook fish)
 
 # anyenv
 set -x PATH $HOME/.anyenv/bin $PATH
 
-# ndenv
+# anyenv - ndenv
 set -x NDENV_ROOT $HOME/.anyenv/envs/ndenv
 set -x PATH $HOME/.anyenv/envs/ndenv/bin $PATH
 set -x PATH $NDENV_ROOT/shims $PATH
@@ -13,15 +13,10 @@ set -x PATH $NDENV_ROOT/shims $PATH
 set -x PYENV_ROOT "$HOME/.anyenv/envs/pyenv"
 set -x PATH $PATH "$HOME/.anyenv/envs/pyenv/bin"
 
-# peco
-set fish_plugins theme peco
+# fzf
+set FZF_ALT_C_OPTS "--preview 'tree -C {} | head -200'"
 
-# Bind for peco history to Ctrl+r
-function fish_user_key_bindings
-    bind \cr peco_select_history
-end
-
-# Enter ls
+# ls when enter
 function done_enter --on-event fish_postexec
     if test -z "$argv"
         ls
