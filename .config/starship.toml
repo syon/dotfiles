@@ -1,0 +1,64 @@
+format = """
+$directory\
+$git_branch\
+$git_status\
+$line_break\
+$character\
+"""
+
+right_format = """
+$cmd_duration\
+$nodejs\
+$time\
+"""
+
+add_newline = true
+
+[character]
+format = "$symbol "
+success_symbol = "[◉](bold italic bright-yellow)"
+error_symbol = "[⊘](italic purple)"
+
+[username]
+style_user = "yellow bold"
+style_root = "purple bold italic"
+format = "[$user]($style) ▻ "
+disabled = false
+
+[directory]
+truncation_length = 1000
+truncate_to_repo = false
+
+[cmd_duration]
+min_time = 1000
+format = "[$duration ](italic bright-yellow)"
+
+[time]
+disabled = false
+format = "[ $time]($style)"
+time_format = "%R"
+utc_time_offset = "local"
+style = "dimmed white"
+
+[git_branch]
+symbol = ''
+format = '\([$symbol$branch(:$remote_branch)]($style)\)'
+
+[git_status]
+format = ' ([$all_status$ahead_behind]($style))'
+conflicted = ''
+ahead = ''
+behind = ''
+diverged = ''
+up_to_date = '✓'
+untracked = ''
+stashed = ''
+modified = '🔥'
+staged = ''
+renamed = ''
+deleted = ''
+
+[nodejs]
+format = " [◫ ($version)](italic bright-green)"
+detect_files = ["package-lock.json", "yarn.lock"]
+version_format = "${major}.${minor}"
