@@ -33,3 +33,8 @@ rm -rf fonts
 
 - [lysyi3m/macos-terminal-themes](https://github.com/lysyi3m/macos-terminal-themes)
   - Monokai Soda
+
+### vim-plug
+
+- [junegunn/vim-plug #Installation](https://github.com/junegunn/vim-plug?tab=readme-ov-file#installation)
+- execute `:PlugInstall` on vim
