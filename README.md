@@ -1,37 +1,19 @@
 # syon/dotfiles
 
-[Nix Darwin](./.config/nix-darwin/)
+## 🏠 chezmoi
 
-## Memo
+`dot_` プレフィックスが付いたファイル・ディレクトリは [chezmoi](https://www.chezmoi.io/) によって管理されています。`chezmoi apply` を実行することでホームディレクトリに展開されます。逆に、ホームディレクトリ上のファイルを編集した後は `chezmoi re-add` を実行することでその変更をこのリポジトリに反映できます。
 
-- [2023年のシェル環境構築](https://zenn.dev/mizchi/scraps/8969fe29a27e21)
+## ❄️ nix-darwin
 
-### Powerline fonts
+[nix-darwin](dot_config/nix-darwin/) は macOS のシステム設定を Nix で宣言的に管理するための設定です。[home-manager](https://github.com/nix-community/home-manager) を組み合わせてユーザー環境も管理しています。
 
-- [powerline/fonts: Patched fonts for Powerline users.](https://github.com/powerline/fonts)
+設定を適用するには以下を実行します。
 
 ```sh
-# clone
-git clone https://github.com/powerline/fonts.git --depth=1
-
-# install
-cd fonts
-./install.sh
-
-# clean-up a bit
-cd ..
-rm -rf fonts
+sudo darwin-rebuild switch --flake ~/.config/nix-darwin
 ```
 
-### Terminal
+## cf.
 
-ターミナル.app > 環境設定 > プロファイル > キーボード > ☑メタキーとしてOptionキーを使用
-
-- [lysyi3m/macos-terminal-themes](https://github.com/lysyi3m/macos-terminal-themes)
-  - Monokai Soda
-- [sindresorhus/terminal-snazzy: Elegant Terminal theme with bright colors](https://github.com/sindresorhus/terminal-snazzy)
-
-### vim-plug
-
-- [junegunn/vim-plug #Installation](https://github.com/junegunn/vim-plug?tab=readme-ov-file#installation)
-- execute `:PlugInstall` on vim
+- [2023年のシェル環境構築](https://zenn.dev/mizchi/scraps/8969fe29a27e21)

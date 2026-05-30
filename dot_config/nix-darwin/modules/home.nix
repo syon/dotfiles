@@ -6,6 +6,8 @@
   home.username = "syon";
   home.homeDirectory = "/Users/syon";
 
+  home.packages = [ pkgs.chezmoi ];
+
   programs.git = {
     enable = true;
     ignores = [

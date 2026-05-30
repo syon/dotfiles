@@ -1,7 +1,5 @@
 macos-titlebar-style = transparent
 background-opacity = 0.85
 background-blur-radius = 15
-
-theme = tokyonight
-
 font-size = 16
+theme = tokyonight
