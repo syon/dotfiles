@@ -6,7 +6,11 @@
   home.username = "syon";
   home.homeDirectory = "/Users/syon";
 
-  programs.git.ignores = [
-    ".DS_Store"
-  ];
+  programs.git = {
+    enable = true;
+    ignores = [
+      ".DS_Store"
+      "**/.claude/settings.local.json"
+    ];
+  };
 }

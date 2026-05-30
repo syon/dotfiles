@@ -17,7 +17,6 @@ shell = "zsh"
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 
-# For example:
-#
-# [plugins.base16]
-# github = "chriskempson/base16-shell"
+# zsh-syntax-highlighting must come last
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"

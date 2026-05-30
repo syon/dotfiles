@@ -5,9 +5,14 @@
     onActivation.autoUpdate = true;
     onActivation.cleanup = "zap";
 
+    taps = [
+      "trasta298/tap"
+    ];
+
     brews = [
       "eza"
       "fzf"
+      "keifu"
       "sheldon"
       "starship"
     ];
@@ -23,6 +28,7 @@
       "dropbox"
       "github" # GitHub Desktop
       "google-chrome"
+      "ghostty"
       "google-japanese-ime"
       "hammerspoon"
       "popclip"
