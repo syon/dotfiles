@@ -1,0 +1,32 @@
+export PATH="$HOME/.local/bin:$PATH"
+
+## history
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt share_history
+setopt hist_ignore_all_dups
+
+## completions
+autoload -Uz compinit
+compinit
+
+## plugins / prompt / direnv
+eval "$(sheldon source)"
+eval "$(starship init zsh)"
+eval "$(direnv hook zsh)"
+
+## aliases
+alias ls="eza --icons"
+alias la="eza --icons -a --git -g -h --oneline"
+alias ll="eza --icons -l --git -h"
+alias lla="eza --icons -la --git -h"
+
+## fzf history search (^r)
+function fzf-select-history() {
+    BUFFER=$(history -n -r 1 | fzf --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N fzf-select-history
+bindkey '^r' fzf-select-history
