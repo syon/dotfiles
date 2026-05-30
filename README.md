@@ -1,11 +1,5 @@
 # syon/dotfiles
 
-## Mackup
-
-backup and restore
-
-- https://github.com/lra/mackup
-
 ## Memo
 
 - [2023年のシェル環境構築](https://zenn.dev/mizchi/scraps/8969fe29a27e21)
@@ -33,6 +27,7 @@ rm -rf fonts
 
 - [lysyi3m/macos-terminal-themes](https://github.com/lysyi3m/macos-terminal-themes)
   - Monokai Soda
+- [sindresorhus/terminal-snazzy: Elegant Terminal theme with bright colors](https://github.com/sindresorhus/terminal-snazzy)
 
 ### vim-plug
 
