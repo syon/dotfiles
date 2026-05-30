@@ -1,5 +1,7 @@
 # syon/dotfiles
 
+[Nix Darwin](./.config/nix-darwin/)
+
 ## Memo
 
 - [2023年のシェル環境構築](https://zenn.dev/mizchi/scraps/8969fe29a27e21)
