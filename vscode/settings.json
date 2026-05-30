@@ -1,22 +1,23 @@
 {
-  "window.zoomLevel": 0,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "newUntitledFile",
-  "editor.fontFamily": "'SF Mono', 'Source Han Code JP', Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 14,
+  "editor.fontFamily": "'Geist Mono', PlemolJP, 'JetBrains Mono', 'Migu 1M', monospace",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 15,
   "editor.tabSize": 2,
-  "editor.renderWhitespace": "all",
   "editor.minimap.enabled": false,
-  "prettier.disableLanguages": [],
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.wordSegmenterLocales": ["ja"],
+  "workbench.editor.wrapTabs": true,
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.fileNesting.enabled": true,
+  "files.insertFinalNewline": true,
   "terminal.integrated.scrollback": 3000,
-  "terminal.integrated.fontFamily": "Fira Mono for Powerline",
+  "terminal.integrated.fontFamily": "'Geist Mono', 'UDEV Gothic NFLG', 'Fira Mono for Powerline', 'Cascadia Code PL', 'PlemolJP Console NF', 'Migu 1M', monospace",
   "terminal.integrated.fontSize": 14,
-  "workbench.colorTheme": "lucy-evening",
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -24,13 +25,160 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "terminal.integrated.rendererType": "dom",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "breadcrumbs.enabled": false,
   "git.enableSmartCommit": true,
   "explorer.confirmDelete": false,
-  "npm-scripts.showStartNotification": false,
-  "vetur.validation.template": false
+  "vetur.validation.template": false,
+  "python.linting.flake8Enabled": true,
+  "npm.enableRunFromFolder": true,
+  "search.exclude": {
+    "**/package-lock.json": true
+  },
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.endOfLine": "auto",
+  "code-eol.color": "#555555",
+  "workbench.colorTheme": "Dracula Theme",
+  "editor.renderWhitespace": "all",
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "markdown-preview-github-styles.colorTheme": "light",
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "npm.scriptExplorerExclude": ["node_modules.*"],
+  "window.menuBarVisibility": "compact",
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "never",
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "workbench.colorCustomizations": {
+    // Totally Transparent
+    "editor.selectionHighlightBackground": "#ffffff00",
+    "editor.findMatchHighlightBackground": "#ffffff00",
+    // Borders
+    "editor.findMatchBorder": "#00ff00",
+    "editor.findMatchHighlightBorder": "#ff8800",
+    "editor.selectionHighlightBorder": "#ffffff66",
+    "editor.lineHighlightBorder": "#272727",
+    // Selection
+    "editor.selectionBackground": "#ff88ff66",
+    "editor.selectionForeground": "#ff0000",
+    "editor.inactiveSelectionBackground": "#ffffff44",
+    "editor.wordHighlightBackground": "#0066ff00",
+    "editor.wordHighlightStrongBackground": "#ff444444",
+    "editor.wordHighlightStrongBorder": "#dd004488",
+    // Misc
+    "editorCursor.foreground": "#00ff00",
+    "editor.lineHighlightBackground": "#181818",
+    "editor.findMatchBackground": "#000000",
+    // Debugger
+    "statusBar.debuggingBackground": "#410d18",
+    "statusBar.debuggingForeground": "#dddddd",
+    // Tab styling
+    "tab.activeBackground": "#44475a",
+    "tab.activeForeground": "#f8f8f2",
+    "tab.inactiveBackground": "#282a36",
+    "tab.inactiveForeground": "#6272a4",
+    "tab.activeBorder": "#bd93f9",
+    "tab.activeBorderTop": "#50fa7b",
+    // Editor group styling
+    "editorGroup.border": "#6272a4",
+    "editorGroupHeader.tabsBackground": "#21222c",
+    "editorGroup.focusedEmptyBorder": "#bd93f9",
+    "editorGroup.emptyBackground": "#1e1f29",
+    "tab.unfocusedActiveBackground": "#2d2d30",
+    "tab.unfocusedActiveForeground": "#888888",
+    "tab.unfocusedInactiveBackground": "#21222c",
+    "tab.unfocusedInactiveForeground": "#565869"
+  },
+  "breadcrumbs.enabled": false,
+  "editor.colorDecorators": false,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.lightbulb.enabled": "off",
+  "editor.accessibilitySupport": "off",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1",
+    "Q_NEW_SESSION": "1"
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.profiles.osx": {
+    "zsh": { "path": "/bin/zsh", "args": ["-l", "-i"] }
+  },
+  "update.showReleaseNotes": false,
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "explorer.confirmPasteNative": false,
+  "eslint.format.enable": true,
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Windows PowerShell": {
+      "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    }
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "window.commandCenter": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "claudeCode.preferredLocation": "sidebar",
+  "docker.extension.dockerEngineAvailabilityPrompt": false,
+  "markdown-mermaid.darkModeTheme": "base",
+  "claudeCode.selectedModel": "default",
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://biomejs.dev": true
+  },
+  "extensions.ignoreRecommendations": true,
+  "chat.fontSize": 14
 }
