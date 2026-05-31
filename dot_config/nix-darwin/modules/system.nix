@@ -31,6 +31,8 @@
     NSGlobalDomain = {
       KeyRepeat = 2;
       InitialKeyRepeat = 15;
+      # F1、F2などのキーを標準のファンクションキーとして使用
+      "com.apple.keyboard.fnState" = true;
     };
 
     trackpad = {
