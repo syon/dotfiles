@@ -7,6 +7,9 @@ SAVEHIST=100000
 setopt share_history
 setopt hist_ignore_all_dups
 
+## navigation
+setopt auto_cd
+
 ## completions
 autoload -Uz compinit
 compinit
