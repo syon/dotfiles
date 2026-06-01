@@ -1,5 +1,12 @@
+# Window
 macos-titlebar-style = transparent
 background-opacity = 0.85
 background-blur-radius = 15
+
+# Theme
+theme = Snazzy
+
+# Font
+font-family = Geist Mono
+font-family = UDEV Gothic JPDOC
 font-size = 16
-theme = tokyonight
