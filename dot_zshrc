@@ -14,10 +14,11 @@ setopt auto_cd
 autoload -Uz compinit
 compinit
 
-## plugins / prompt / direnv
+## evals
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
+eval "$(mise activate zsh)"
 
 ## aliases
 alias ls="eza --icons"

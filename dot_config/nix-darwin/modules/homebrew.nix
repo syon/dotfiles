@@ -13,6 +13,7 @@
       "eza"
       "fzf"
       "keifu"
+      "mise"
       "sheldon"
       "starship"
     ];
