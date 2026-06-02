@@ -33,6 +33,7 @@
       "ghostty"
       "google-japanese-ime"
       "hammerspoon"
+      "karabiner-elements"
       "popclip"
       "visual-studio-code"
     ];
