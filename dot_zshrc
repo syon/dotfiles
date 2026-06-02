@@ -14,11 +14,12 @@ setopt auto_cd
 autoload -Uz compinit
 compinit
 
-## evals
+## evals (after compinit)
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 eval "$(mise activate zsh)"
+eval "$(zoxide init zsh)"
 
 ## aliases
 alias ls="eza --icons"

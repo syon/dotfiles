@@ -16,6 +16,7 @@
       "mise"
       "sheldon"
       "starship"
+      "zoxide"
     ];
 
     casks = [
