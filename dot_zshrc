@@ -17,9 +17,9 @@ compinit
 ## evals (after compinit)
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 eval "$(mise activate zsh)"
-eval "$(zoxide init zsh)"
 
 ## aliases
 alias ls="eza --icons"
