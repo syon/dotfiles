@@ -3,6 +3,10 @@
 
   system.stateVersion = 7;
   nix.enable = false;
+
+  environment.systemPackages = with pkgs; [
+    git
+  ];
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   system.primaryUser = "syon";
