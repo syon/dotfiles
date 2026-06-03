@@ -10,6 +10,7 @@
     ];
 
     brews = [
+      "chezmoi"
       "eza"
       "fzf"
       "keifu"

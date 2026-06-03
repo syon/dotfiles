@@ -1,5 +1,9 @@
 # syon/dotfiles
 
+## 💻 新しい Mac のセットアップ
+
+[SETUP.md](SETUP.md) を参照してください。
+
 ## 🏠 chezmoi
 
 `dot_` プレフィックスが付いたファイル・ディレクトリは [chezmoi](https://www.chezmoi.io/) によって管理されています。`chezmoi apply` を実行することでホームディレクトリに展開されます。逆に、ホームディレクトリ上のファイルを編集した後は `chezmoi re-add` を実行することでその変更をこのリポジトリに反映できます。
