@@ -1,6 +1,6 @@
 { ... }:
 {
-  imports = [ ./fonts.nix ];
+  imports = [ ./fonts.nix ./shell.nix ];
 
   home.stateVersion = "26.05";
   home.username = "syon";

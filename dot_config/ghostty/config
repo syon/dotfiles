@@ -6,6 +6,9 @@ background-blur-radius = 15
 # Theme
 theme = Snazzy
 
+# Cursor
+cursor-style = bar
+
 # Font
 font-family = Geist Mono
 font-family = UDEV Gothic JPDOC

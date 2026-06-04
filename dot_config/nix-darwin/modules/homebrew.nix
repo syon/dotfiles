@@ -5,20 +5,7 @@
     onActivation.autoUpdate = true;
     onActivation.cleanup = "none";
 
-    taps = [
-      "trasta298/tap"
-    ];
-
-    brews = [
-      "chezmoi"
-      "eza"
-      "fzf"
-      "keifu"
-      "mise"
-      "sheldon"
-      "starship"
-      "zoxide"
-    ];
+    brews = [];
 
     casks = [
       "1password"
