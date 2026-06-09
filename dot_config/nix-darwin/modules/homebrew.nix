@@ -22,6 +22,7 @@
       "google-japanese-ime"
       "hammerspoon"
       "karabiner-elements"
+      "obsidian"
       "popclip"
       "visual-studio-code"
     ];
