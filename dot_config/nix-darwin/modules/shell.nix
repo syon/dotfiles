@@ -6,6 +6,7 @@
     eza
     fzf
     keifu
+    ripgrep
     mise
     sheldon
     starship
