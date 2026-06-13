@@ -5,7 +5,9 @@
     onActivation.autoUpdate = true;
     onActivation.cleanup = "none";
 
-    brews = [];
+    taps = [
+      "manaflow-ai/cmux"
+    ];
 
     casks = [
       "1password"
@@ -22,6 +24,7 @@
       "google-japanese-ime"
       "hammerspoon"
       "karabiner-elements"
+      "manaflow-ai/cmux/cmux"
       "obsidian"
       "popclip"
       "visual-studio-code"
