@@ -4,6 +4,7 @@
     chezmoi
     direnv
     eza
+    bat
     fzf
     keifu
     ripgrep
