@@ -12,10 +12,10 @@
 
 [nix-darwin](dot_config/nix-darwin/) は macOS のシステム設定を Nix で宣言的に管理するための設定です。[home-manager](https://github.com/nix-community/home-manager) を組み合わせてユーザー環境も管理しています。
 
-設定を適用するには以下を実行します。
+設定を適用するには `chezmoi apply` を実行してから `darwin-rebuild switch` する必要がありますが、これをまとめて行う [darwin-rebuild.sh](darwin-rebuild.sh) を用意しています。リポジトリ直下で以下を実行してください。
 
 ```sh
-sudo darwin-rebuild switch --flake ~/.config/nix-darwin
+./darwin-rebuild.sh
 ```
 
 ## cf.
