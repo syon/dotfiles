@@ -18,6 +18,7 @@
       "clipy"
       "discord"
       "dropbox"
+      "gcloud-cli"
       "github" # GitHub Desktop
       "google-chrome"
       "ghostty"
