@@ -18,6 +18,27 @@
 ./darwin-rebuild.sh
 ```
 
+### パッケージのアップデート
+
+flake.lock を更新してから再適用します（`mise self-update` などパッケージ側の自己更新機能は使いません）。
+
+```sh
+nix flake update --flake dot_config/nix-darwin
+./darwin-rebuild.sh
+```
+
+なお nixpkgs は stable チャンネル（26.05）を追っているため、パッケージのバージョンは基本的に固定です。更新の速いツール（mise など）だけ `nixpkgs-unstable` input から取得しています（[shell.nix](dot_config/nix-darwin/modules/shell.nix) の `pkgs-unstable.*` 参照）。
+
+### 26.11 リリース時にやること
+
+nixpkgs と nix-darwin はバージョンが一致していないとビルドが拒否されるため、[flake.nix](dot_config/nix-darwin/flake.nix) の 3 つの input のブランチを**同時に**上げます。
+
+1. `nixpkgs.url` → `github:NixOS/nixpkgs/nixpkgs-26.11-darwin`
+2. `nix-darwin.url` → `github:nix-darwin/nix-darwin/nix-darwin-26.11`
+3. `home-manager.url` → `github:nix-community/home-manager/release-26.11`
+
+その後 `nix flake update --flake dot_config/nix-darwin` して `./darwin-rebuild.sh` を実行してください。
+
 ## cf.
 
 - [2023年のシェル環境構築](https://zenn.dev/mizchi/scraps/8969fe29a27e21)

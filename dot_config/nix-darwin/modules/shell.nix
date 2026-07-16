@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
   home.packages = with pkgs; [
     chezmoi
@@ -8,7 +8,7 @@
     fzf
     keifu
     ripgrep
-    mise
+    pkgs-unstable.mise
     sheldon
     starship
     zoxide

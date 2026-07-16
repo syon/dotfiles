@@ -3,9 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     nix-darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -19,11 +20,13 @@
     {
       self,
       nixpkgs,
+      nixpkgs-unstable,
       nix-darwin,
       home-manager,
     }:
     let
       pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.aarch64-darwin;
     in
     {
       formatter.aarch64-darwin = pkgs.writeShellApplication {
@@ -43,6 +46,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit pkgs-unstable; };
             home-manager.users.syon = import ./modules/home.nix;
           }
         ];
