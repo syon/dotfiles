@@ -12,6 +12,7 @@
     sheldon
     starship
     pkgs-unstable.uv
+    whisper-cpp
     zoxide
   ];
 }
