@@ -8,7 +8,6 @@
     fzf
     keifu
     ripgrep
-    pkgs-unstable.mise
     sheldon
     starship
     pkgs-unstable.uv
