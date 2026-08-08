@@ -1,6 +1,6 @@
 # Window
 macos-titlebar-style = transparent
-background-opacity = 0.85
+background-opacity = 0.9
 background-blur-radius = 15
 
 # Theme
