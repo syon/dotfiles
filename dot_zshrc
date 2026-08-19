@@ -21,6 +21,9 @@ eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 eval "$(mise activate zsh)"
 
+## orbstack (PATH fallback if /usr/local/bin links are missing)
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
 ## aliases
 alias ls="eza --icons"
 alias la="eza --icons -a --git -g -h --oneline"

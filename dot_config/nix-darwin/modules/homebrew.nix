@@ -33,6 +33,7 @@
       "karabiner-elements"
       "manaflow-ai/cmux/cmux"
       "obsidian"
+      "orbstack"
       "popclip"
       "visual-studio-code"
     ];
