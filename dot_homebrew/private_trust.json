@@ -1,0 +1,11 @@
+{
+  "trustedcasks": [
+    "manaflow-ai/cmux/cmux"
+  ],
+  "trustedtaps": [
+    "jacek-kurlit/tap"
+  ],
+  "trustedformulae": [
+    "trasta298/tap/keifu"
+  ]
+}
