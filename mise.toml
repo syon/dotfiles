@@ -1,0 +1,3 @@
+[tasks.remote]
+description = "iPhoneからリモート接続できるようにサーバーモードで起動"
+run = "env -u ANTHROPIC_API_KEY claude remote-control --name home"
