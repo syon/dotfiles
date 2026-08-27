@@ -1,3 +1,4 @@
 [tools]
 node = "lts"
+biome = "latest"
 "npm:@evenrealities/even-terminal" = "latest"
