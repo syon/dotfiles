@@ -7,6 +7,7 @@
 
     taps = [
       "manaflow-ai/cmux"
+      "stablyai/orca"
     ];
 
     # nixpkgs の mise は aarch64-darwin のバイナリキャッシュに無く、
@@ -35,6 +36,7 @@
       "obsidian"
       "orbstack"
       "popclip"
+      "stablyai/orca/orca"
       "visual-studio-code"
     ];
 
