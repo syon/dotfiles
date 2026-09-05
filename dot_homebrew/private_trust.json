@@ -1,6 +1,7 @@
 {
   "trustedcasks": [
-    "manaflow-ai/cmux/cmux"
+    "manaflow-ai/cmux/cmux",
+    "stablyai/orca/orca"
   ],
   "trustedtaps": [
     "jacek-kurlit/tap"
