@@ -38,6 +38,7 @@
       "orbstack"
       "popclip"
       "stablyai/orca/orca"
+      "the-unarchiver"
       "visual-studio-code"
     ];
 
