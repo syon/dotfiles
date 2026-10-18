@@ -11,6 +11,7 @@
     ];
 
     brews = [
+      "awscli"
       "flyctl"
       # nixpkgs の mise は aarch64-darwin のバイナリキャッシュに無く、
       # 毎回ソースからのフルビルド（大量の rustc）になるため Homebrew から入れる。
