@@ -18,6 +18,7 @@
   - `starship`
 - casks
   - `1password`
+  - `1password-cli`
   - `arc`
   - `brave-browser`
   - `chrome-remote-desktop-host`
