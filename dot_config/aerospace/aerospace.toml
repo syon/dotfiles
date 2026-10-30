@@ -1,0 +1,146 @@
+# AeroSpace の設定(下書き)
+# 置き場所: ~/.config/aerospace/aerospace.toml(chezmoi で展開する)
+# 既定の全項目: /Applications/AeroSpace.app/Contents/Resources/default-config.toml
+#
+# 方針
+# - ワークスペースは 1〜10 の10個。空でも消さない
+# - アプリごとに起動先のワークスペースを決める(下の on-window-detected)
+# - タイル型にせず、すべてのウィンドウを浮かせて今までどおり手で並べる
+
+config-version = 2
+
+start-at-login = true
+auto-reload-config = true
+
+after-startup-command = []
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# cmd-h で隠したアプリは、AeroSpace のワークスペース切り替えと相性が悪いので戻す
+automatically-unhide-macos-hidden-apps = true
+
+persistent-workspaces = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+key-mapping.preset = 'qwerty'
+
+gaps.inner.horizontal = 0
+gaps.inner.vertical = 0
+gaps.outer.left = 0
+gaps.outer.bottom = 0
+gaps.outer.top = 0
+gaps.outer.right = 0
+
+# ---------------------------------------------------------------------------
+# アプリの振り分け
+# 上から順に照合し、最初に当たった規則だけが実行される。
+# bundle id は `osascript -e 'id of app "アプリ名"'` で調べる。
+# 起動中のウィンドウの一覧は `aerospace list-windows --all` で見られる。
+# 9 と 10 は決まったアプリを置かず、空けておく。
+# ---------------------------------------------------------------------------
+
+# 1: Claude
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+run = ['layout floating', 'move-node-to-workspace 1']
+
+# 2: Arc
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = ['layout floating', 'move-node-to-workspace 2']
+
+# 3: Brave
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = ['layout floating', 'move-node-to-workspace 3']
+
+# 4: Chrome
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = ['layout floating', 'move-node-to-workspace 4']
+
+# 5: VS Code と GitHub Desktop
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = ['layout floating', 'move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-id = 'com.github.GitHubClient'
+run = ['layout floating', 'move-node-to-workspace 5']
+
+# 6: Orca
+[[on-window-detected]]
+if.app-id = 'com.stablyai.orca'
+run = ['layout floating', 'move-node-to-workspace 6']
+
+# 7: Ghostty
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = ['layout floating', 'move-node-to-workspace 7']
+
+# 8: Obsidian
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = ['layout floating', 'move-node-to-workspace 8']
+
+# 上のどれにも当たらないウィンドウ(Finder、1Password、システム設定など)は、
+# 今いるワークスペースで浮かせて開く
+[[on-window-detected]]
+if = 'true'
+run = 'layout floating'
+
+# ---------------------------------------------------------------------------
+# キー割り当て
+# Hammerspoon が ctrl-f/b/n/p/h/m/v/9/0/,/. を使っているので、ctrl 系は避ける。
+# ---------------------------------------------------------------------------
+[mode.main.binding]
+    # ワークスペースへ移動
+    alt-1 = 'workspace 1'
+    alt-2 = 'workspace 2'
+    alt-3 = 'workspace 3'
+    alt-4 = 'workspace 4'
+    alt-5 = 'workspace 5'
+    alt-6 = 'workspace 6'
+    alt-7 = 'workspace 7'
+    alt-8 = 'workspace 8'
+    alt-9 = 'workspace 9'
+    alt-0 = 'workspace 10'
+
+    # 今のウィンドウを別のワークスペースへ送る
+    alt-shift-1 = 'move-node-to-workspace 1'
+    alt-shift-2 = 'move-node-to-workspace 2'
+    alt-shift-3 = 'move-node-to-workspace 3'
+    alt-shift-4 = 'move-node-to-workspace 4'
+    alt-shift-5 = 'move-node-to-workspace 5'
+    alt-shift-6 = 'move-node-to-workspace 6'
+    alt-shift-7 = 'move-node-to-workspace 7'
+    alt-shift-8 = 'move-node-to-workspace 8'
+    alt-shift-9 = 'move-node-to-workspace 9'
+    alt-shift-0 = 'move-node-to-workspace 10'
+
+    # Mission Control の ^[ ^] と同じ感覚で、隣のワークスペースへ移る
+    # macOS 側の「左/右の操作スペースに移動」は AeroSpace を使うなら不要になる
+    ctrl-leftSquareBracket = 'workspace --wrap-around prev'
+    ctrl-rightSquareBracket = 'workspace --wrap-around next'
+
+    alt-tab = 'workspace-back-and-forth'
+
+    # 今いるワークスペースの中だけでウィンドウを順に切り替える(端まで行ったら先頭に戻る)
+    alt-w = 'focus --boundaries-action wrap-around-the-workspace dfs-next'
+    alt-shift-w = 'focus --boundaries-action wrap-around-the-workspace dfs-prev'
+
+    # 浮かせる/タイルにするの切り替え
+    alt-shift-f = 'layout floating tiling'
+
+    alt-shift-semicolon = 'mode service'
+
+[mode.service.binding]
+    esc = ['reload-config', 'mode main']
+    r = ['flatten-workspace-tree', 'mode main']
+    f = ['layout floating tiling', 'mode main']

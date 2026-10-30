@@ -7,6 +7,7 @@
 
     taps = [
       "manaflow-ai/cmux"
+      "nikitabobko/tap"
       "stablyai/orca"
     ];
 
@@ -21,6 +22,7 @@
     casks = [
       "1password"
       "1password-cli"
+      "nikitabobko/tap/aerospace"
       "arc"
       "brave-browser"
       "chrome-remote-desktop-host"
