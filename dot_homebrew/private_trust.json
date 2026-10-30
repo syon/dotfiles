@@ -1,6 +1,8 @@
 {
   "trustedcasks": [
     "manaflow-ai/cmux/cmux",
+    "nikitabobko/tap/aerospace",
+    "penso/tap/herdr-gpui",
     "stablyai/orca/orca"
   ],
   "trustedtaps": [

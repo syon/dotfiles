@@ -8,6 +8,7 @@
     taps = [
       "manaflow-ai/cmux"
       "nikitabobko/tap"
+      "penso/tap"
       "stablyai/orca"
     ];
 
@@ -36,6 +37,7 @@
       "ghostty"
       "google-japanese-ime"
       "hammerspoon"
+      "penso/tap/herdr-gpui"
       "karabiner-elements"
       "manaflow-ai/cmux/cmux"
       "obsidian"
