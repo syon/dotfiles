@@ -79,9 +79,13 @@ run = ['layout floating', 'move-node-to-workspace 5']
 if.app-id = 'com.stablyai.orca'
 run = ['layout floating', 'move-node-to-workspace 6']
 
-# 7: Ghostty
+# 7: Ghostty と Herdr UI
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
+run = ['layout floating', 'move-node-to-workspace 7']
+
+[[on-window-detected]]
+if.app-id = 'so.pen.herdr-gpui'
 run = ['layout floating', 'move-node-to-workspace 7']
 
 # 8: Obsidian
