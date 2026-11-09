@@ -2,7 +2,7 @@
   "trustedcasks": [
     "manaflow-ai/cmux/cmux",
     "nikitabobko/tap/aerospace",
-    "penso/tap/herdr-gpui",
+    "sheprd-labs/tap/sheprd",
     "stablyai/orca/orca"
   ],
   "trustedtaps": [
