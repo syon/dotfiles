@@ -47,15 +47,25 @@ function claude() {
 }
 
 ## claude-ds (モデルを DeepSeek に差し替えて Claude Code を起動する)
-## キーは 1Password に置き、起動のたびに op で読む。このファイルには書かない
+## キーは次の順に探す。このファイルには書かない
+##   1. 環境変数 DEEPSEEK_API_KEY
+##   2. ~/.config/deepseek.env (権限 600、chezmoi の管理外。遠隔操作で Touch ID が使えないとき用)
+##   3. 1Password (op read)
+## 利用上限のあるキーなので、2 の平文保存は許容している
 ## 設定値は https://api-docs.deepseek.com/quick_start/agent_integrations/claude_code に合わせている
 function claude-ds() {
     local ref='op://Private/DeepSeek/credential'
-    local key
-    key=$(op read --no-newline "$ref") || {
-        echo "1Password から $ref を読めませんでした" >&2
-        return 1
-    }
+    local envfile=~/.config/deepseek.env
+    local key=${DEEPSEEK_API_KEY:-}
+    if [[ -z $key && -r $envfile ]]; then
+        key=$(source "$envfile" && print -rn -- "${DEEPSEEK_API_KEY:-}")
+    fi
+    if [[ -z $key ]]; then
+        key=$(op read --no-newline "$ref") || {
+            echo "1Password から $ref を読めませんでした。DEEPSEEK_API_KEY か $envfile を用意すれば op を使わずに起動できます" >&2
+            return 1
+        }
+    fi
     (
         export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
         export ANTHROPIC_AUTH_TOKEN=$key
